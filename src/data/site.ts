@@ -4,17 +4,22 @@
 // ---------------------------------------------------------------------------
 
 export const profile = {
-  name: "Hilal",
+  name: "Hilal Korkmaz",
   role: "Software Engineer",
   roleAccent: "in progress.",
   tagline:
     "I build backend systems and full-stack applications with clean code and good architecture.",
-  email: "hilal@example.com", // TODO: gerçek e-posta
+  email: "hilal.krkmz025@gmail.com",
   location: "İnönü Üniversitesi, Türkiye",
-  resumeUrl: "/cv.pdf", // TODO: public/cv.pdf ekle
+  // CV dosyalarını public/ içine ekle. Buton, birden fazla varsa açılır menü gösterir.
+  // Henüz hazır değilse boş dizi bırak — buton gizlenir.
+  resumes: [
+    // { label: "CV (TR)", href: "/cv-tr.pdf" },
+    // { label: "CV (EN)", href: "/cv-en.pdf" },
+  ] as { label: string; href: string }[],
   social: {
-    github: "https://github.com/Hilalkrkmz", // TODO: doğrula
-    linkedin: "https://linkedin.com/in/hilal", // TODO: gerçek link
+    github: "https://github.com/Hilalkrkmz",
+    linkedin: "https://www.linkedin.com/in/hilal-korkmaz-87a214285",
   },
 };
 

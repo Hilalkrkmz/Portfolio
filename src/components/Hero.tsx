@@ -1,11 +1,7 @@
 import { profile, heroSkills } from "@/data/site";
 import { CodeWindow } from "./CodeWindow";
-import {
-  ArrowIcon,
-  DownloadIcon,
-  GitHubIcon,
-  LinkedInIcon,
-} from "./icons";
+import { ResumeMenu } from "./ResumeMenu";
+import { ArrowIcon, GitHubIcon, LinkedInIcon } from "./icons";
 
 export function Hero() {
   return (
@@ -61,12 +57,7 @@ export function Hero() {
             >
               <LinkedInIcon /> LinkedIn
             </a>
-            <a
-              href={profile.resumeUrl}
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium transition hover:border-accent"
-            >
-              <DownloadIcon /> Résumé
-            </a>
+            <ResumeMenu />
           </div>
         </div>
 

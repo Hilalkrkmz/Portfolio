@@ -33,7 +33,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <a href="#home" className="flex items-center gap-1.5 text-lg font-semibold">
-          {profile.name}
+          {profile.name.split(" ")[0]}
           <span className="font-mono text-accent">{"</>"}</span>
         </a>
 

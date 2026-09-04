@@ -18,5 +18,6 @@ Personal portfolio for Hilal — Next.js 16 (App Router) + Tailwind v4 + TypeScr
 - Theme: class-based dark mode (`.dark` on `<html>`), default is dark. No-flash script in
   `src/app/layout.tsx`; toggle in `ThemeToggle.tsx`. Colors are CSS vars in `globals.css`.
 - The hero code snippet in `site.ts` must be real, compilable Java.
-- `profile.resumeUrl` expects `public/cv.pdf` — add it.
+- `profile.resumes` lists CV files in `public/` (e.g. TR + EN). Empty array hides the button;
+  one entry renders a link; two or more render a dropdown (`ResumeMenu.tsx`).
 - Deploy target: Vercel.
