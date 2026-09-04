@@ -176,10 +176,5 @@ export const education: Education[] = [
   },
 ];
 
-// GitHub istatistikleri — gerçek sayıları koy ya da bu bloğu kaldır.
-export const githubStats = [
-  { value: "20+", label: "Repositories" },
-  { value: "400+", label: "Commits" },
-  { value: "6", label: "Projects" },
-  { value: "1", label: "Year coding" },
-];
+// GitHub Activity bölümü (katkı takvimi + istatistikler) canlı olarak
+// GitHub'dan çekilir — bkz. src/components/GithubActivity.tsx. Elle veri yok.
