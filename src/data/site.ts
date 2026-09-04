@@ -156,6 +156,26 @@ export const experience: Experience[] = [
   },
 ];
 
+export type Education = {
+  school: string;
+  program: string;
+  degree: string;
+  period: string;
+  note?: string;
+  courses?: string[]; // opsiyonel — ilgili dersler
+};
+
+export const education: Education[] = [
+  {
+    school: "İnönü Üniversitesi",
+    program: "Software Engineering",
+    degree: "BSc",
+    period: "2023 – 2027", // TODO: başlangıç/mezuniyet yılını doğrula
+    note: "4th year",
+    courses: [],
+  },
+];
+
 // GitHub istatistikleri — gerçek sayıları koy ya da bu bloğu kaldır.
 export const githubStats = [
   { value: "20+", label: "Repositories" },
