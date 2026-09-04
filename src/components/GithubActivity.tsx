@@ -8,7 +8,6 @@ type GitHubData = {
   days: Day[];
   totalLastYear: number;
   publicRepos: number | null;
-  followers: number | null;
 };
 
 const username = profile.social.github.split("/").filter(Boolean).pop() ?? "";
@@ -46,7 +45,7 @@ async function getGitHubData(): Promise<GitHubData | null> {
       contributions: Day[];
     };
     const user = userRes.ok
-      ? ((await userRes.json()) as { public_repos?: number; followers?: number })
+      ? ((await userRes.json()) as { public_repos?: number })
       : null;
 
     return {
@@ -55,7 +54,6 @@ async function getGitHubData(): Promise<GitHubData | null> {
         contrib.total?.lastYear ??
         (contrib.contributions ?? []).reduce((s, d) => s + d.count, 0),
       publicRepos: user?.public_repos ?? null,
-      followers: user?.followers ?? null,
     };
   } catch {
     return null;
@@ -96,9 +94,6 @@ export async function GithubActivity() {
       value: String(data.totalLastYear),
       label: "Contributions (last year)",
     });
-    if (data.followers != null) {
-      stats.push({ value: String(data.followers), label: "Followers" });
-    }
   }
 
   return (
@@ -168,7 +163,7 @@ export async function GithubActivity() {
         )}
 
         {stats.length > 0 && (
-          <div className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-6 sm:grid-cols-3">
+          <div className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-6">
             {stats.map((s) => (
               <div key={s.label}>
                 <p className="text-xl font-bold text-accent">{s.value}</p>
