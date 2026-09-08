@@ -11,15 +11,23 @@ export function Projects() {
       title="Featured Projects"
       subtitle="Some of the projects I've worked on."
     >
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2">
         {featured.map((p) => (
           <article
             key={p.title}
             className="flex flex-col rounded-xl border border-border bg-surface p-5 transition hover:border-accent"
           >
-            <span className="w-fit rounded-md bg-surface-2 px-2 py-1 text-xs text-muted">
-              {p.category}
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="rounded-md bg-surface-2 px-2 py-1 text-xs text-muted">
+                {p.category}
+              </span>
+              {p.wip && (
+                <span className="rounded-md border border-border px-2 py-1 text-[11px] text-muted">
+                  In progress
+                </span>
+              )}
+            </div>
+
             <h3 className="mt-3 text-lg font-semibold">{p.title}</h3>
             <p className="mt-2 flex-1 text-sm text-muted">{p.description}</p>
 

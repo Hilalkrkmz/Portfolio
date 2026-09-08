@@ -64,49 +64,51 @@ export type Project = {
   category: string;
   description: string;
   tech: string[];
-  liveUrl?: string;
+  image?: string; // public/ altındaki ekran görüntüsü — yoksa degrade placeholder
+  liveUrl?: string; // deploy edilince ekle
   githubUrl?: string;
+  wip?: boolean; // "In progress" rozeti
   featured: boolean;
 };
 
 export const projects: Project[] = [
   {
     title: "TaskFlow",
-    category: "Web + Mobile",
+    category: "Web · Desktop · Mobile",
     description:
-      "Task and focus management app with Pomodoro timer, stopwatch, notes, focus history and notifications.",
-    tech: ["Java", "Spring Boot", "React", "React Native"],
-    liveUrl: "#",
+      "Task, note & focus manager — one Spring Boot backend serving three clients: web, Windows desktop (Electron) and Android (React Native). Email-verified accounts, a Pomodoro timer with logged session history, an activity calendar and 9 themes.",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "React", "Electron", "React Native"],
+    image: "/projects/taskflow.png",
     githubUrl: "https://github.com/Hilalkrkmz/TaskFlow",
     featured: true,
   },
   {
-    title: "File Management System",
+    title: "FileFlow",
     category: "Full-Stack",
     description:
-      "File and folder management system with sharing, search, notifications, starred files and an admin panel.",
-    tech: ["Java", "Spring Boot", "React"],
-    liveUrl: "#",
+      "Web file manager built with Spring Boot 3 and React. Folder upload with preserved structure, user-to-user and 24-hour link sharing, search across shared files, soft-delete trash, storage quotas, and an admin panel for users and files.",
+    tech: ["Java 17", "Spring Boot 3", "Spring Security", "JWT", "PostgreSQL", "React"],
+    image: "/projects/fileflow.png",
     githubUrl: "https://github.com/Hilalkrkmz/file-management-system",
     featured: true,
   },
   {
     title: "GradeFlow",
-    category: "Backend",
+    category: "Full-Stack",
     description:
-      "Course, semester and grade management system with GPA calculation and student management.",
-    tech: ["Java", "Spring Boot", "PostgreSQL"],
+      "Course, semester and grade management with weighted grade items, automatic GPA calculation and a dashboard. Spring Boot backend with JWT auth (email verification, refresh tokens) and a React frontend.",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "React"],
     githubUrl: "https://github.com/Hilalkrkmz/GradeFlow",
+    wip: true,
     featured: true,
   },
   {
     title: "Leave Management System",
     category: "Full-Stack",
     description:
-      "Leave management and approval system for employees with role-based access and notifications.",
-    tech: ["Java", "Spring Boot", "React"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Hilalkrkmz/izinTakipSistemi",
+      "Employee leave management on a Spring Boot + React (Vite) stack. JWT auth with role-based access, annual leave-balance tracking with auto-deduction on approval, an approval/rejection workflow, and soft-delete to preserve historical records.",
+    tech: ["Java 17", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "React"],
+    githubUrl: "https://github.com/Hilalkrkmz/leave-management-system",
     featured: true,
   },
 ];
@@ -175,6 +177,3 @@ export const education: Education[] = [
     courses: [],
   },
 ];
-
-// GitHub Activity bölümü (katkı takvimi + istatistikler) canlı olarak
-// GitHub'dan çekilir — bkz. src/components/GithubActivity.tsx. Elle veri yok.
